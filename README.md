@@ -9,5 +9,5 @@ This is a web-portal built for :
 <li>Python 3.7.0</li>
 
 ## Authors
-<li><a href = "https://www.linkedin.com/in/ar1998/" >Arsh Deep </a></li>
-<li><a href = "https://www.linkedin.com/in/ramanaditya/"> Aditya Raman </a> </li>
+<li><a href = "https://github.com/ar1998" >Arsh Deep </a></li>
+<li><a href = "https://github.com/ramanaditya"> Aditya Raman </a> </li>
