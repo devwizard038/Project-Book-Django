@@ -5,7 +5,10 @@ from django.contrib.auth.models import User
 #storing user profile data
 class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+<<<<<<< HEAD
     
+=======
+>>>>>>> 35e4a1eedcd1df7cbe47941a783431c59ce3a946
 
 #storing posts in the databse
 class notes(models.Model):
