@@ -4,6 +4,6 @@ from notes import views
 app_name = 'notes'
 
 urlpatterns = [
-    path()
+    
 
 ]

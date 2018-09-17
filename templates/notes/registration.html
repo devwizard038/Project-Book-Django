@@ -1,0 +1,24 @@
+{% extends "notes/base.html" %}
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+
+  </div>
+       {% if registered  %}
+          <h2>thank you for registering!</h2>
+          {% else %}
+          <h1>Register here</h1>
+          <h3>fill out the form below</h3>
+          <form method="post">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            <input type="submit" name="" value="Register">
+          </form>
+       {% endif %}
+</div>
+
+
+
+
+{% endblock %}
