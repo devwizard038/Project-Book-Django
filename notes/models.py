@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 #storing user profile data
 class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(upload_to="profile_pic",blank=True)
+    
 
 #storing posts in the databse
 class notes(models.Model):

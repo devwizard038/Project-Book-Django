@@ -4,7 +4,7 @@ from notes.models import UserProfileInfo,notes
 
 #form for registering user
 class UserForm(forms.ModelForm):
-    password = models.CharField(widget=forms.PasswordInput, label = 'Your Password')
+    password = forms.CharField(widget=forms.PasswordInput, label = 'Your Password')
 
     class Meta():
         model = User
