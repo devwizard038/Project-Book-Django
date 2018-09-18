@@ -1,0 +1,16 @@
+{% extends "notes/base.html" %}
+{% block body_block %}
+
+<div class="container">
+  <form action="{% url 'notes:user_login' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="enter username">
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+    <input type="submit" name="" value="login">
+  </form>
+
+</div>
+
+{% endblock body_block %}

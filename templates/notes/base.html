@@ -31,8 +31,12 @@
           <li><a href="#"></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="{% url 'notes:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'notes:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          {% else %}
+              <li><a href="{% url 'notes:user_login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
