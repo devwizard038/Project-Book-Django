@@ -28,7 +28,7 @@ SECRET_KEY = 'qmh^8#(wdq=+jgxblt=6d+2&l!!xc&e@!co6)%z$pg^&h3r$6('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.100.7','192.168.100.2','127.0.0.1']
+ALLOWED_HOSTS = ['192.168.100.7','192.168.100.2','192.168.100.3','127.0.0.1']
 
 
 # Application definition
@@ -126,3 +126,7 @@ STATICFILES_DIRS = [STATIC_DIR,]
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+LOGIN_URL = 'notes:user_login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'

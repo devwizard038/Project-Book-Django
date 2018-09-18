@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="{% static 'style/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/base.css' %}">
     <script src="{% static 'style/base.js' %}"></script>
-
   </head>
+
   <body>
     <nav class="navbar navbar-inverse" >
       <div class="container-fluid">
@@ -23,24 +23,32 @@
           <li ><a href="#">Projects</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Resources<span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <li><a href="#">Notes</a></li>
               <li><a href="#"></a></li>
               <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Authors<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://github.com/ramanaditya">Aditya Raman</a></li>
+              <li><a href="https://github.com/ar1998">Arsh Deep</a></li>
             </ul>
           </li>
           <li><a href="#"></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="{% url 'notes:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'notes:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          {% else %}
+              <li><a href="{% url 'notes:user_login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
 
-
     <div id = "home"></div>
     {% block body_block %}
-
     {% endblock %}
 
   </body>
