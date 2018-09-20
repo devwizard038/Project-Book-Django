@@ -1,13 +1,19 @@
 from django.shortcuts import render
+from django.utils import timezone
 from notes.forms import UserForm,notes_form
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
+from .models import notes
 # Create your views here.
 def index(request):
     return render(request, 'notes/index.html')
+
+def file_python(request):
+    note_python = notes.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'notes/file_python.html',{'note_python':note_python})
 
 def register(request):
     registered = False
