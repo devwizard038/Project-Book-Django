@@ -37,7 +37,10 @@
           <li><a href="#"></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+          {% else %}
           <li><a href="{% url 'notes:register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          {% endif %}
           {% if user.is_authenticated %}
           <li><a href="{% url 'notes:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
           {% else %}
