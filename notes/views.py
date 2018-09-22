@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from .models import notes
-# Create your views here.
+
 def index(request):
     return render(request, 'notes/index.html')
 
@@ -24,8 +24,8 @@ def register(request):
             user = User.objects.create_user(username=request.POST['username'],
                                             email=request.POST['email'],
                                             password=request.POST['password'])
-            user.save()
-            user.set_password(user.password)
+            # user.save()
+            # user.set_password(user.password)
 
             user.save()
 
@@ -40,14 +40,15 @@ def register(request):
 def user_login(request):
     print(request, request.method)
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST['username']
+        password = request.POST['password']
 
         user = authenticate(username=username,password=password)
 
-        if user:
+        if user is not None:
             if user.is_active:
-                login(request,user)
+                login(request, user)
+                print("login successful")
                 return HttpResponseRedirect(reverse('index'))
             else:
                 return HttpResponse("account not active")
@@ -58,8 +59,8 @@ def user_login(request):
 from django.contrib.auth.views import LoginView, LogoutView
 
 
-class UserLoginView(LoginView):
-    template_name = 'notes/login.html'
+# class UserLoginView(LoginView):
+#     template_name = 'notes/login.html'
 
 
 
