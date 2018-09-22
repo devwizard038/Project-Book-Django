@@ -54,7 +54,7 @@ def user_login(request):
         else:
             print("login failed for {}".format(username))
             return HttpResponse("invalid login credentials !!")
-    # return render(request, 'notes/login.html')
+    return render(request, 'notes/login.html')
 from django.contrib.auth.views import LoginView, LogoutView
 
 
