@@ -11,9 +11,44 @@ from .models import notes
 def index(request):
     return render(request, 'notes/index.html')
 
-def file_python(request):
-    note_python = notes.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'notes/file_python.html',{'note_python':note_python})
+# def file_python(request):
+#     note_python = notes.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+#     return render(request, 'notes/file_python.html',{'note_python':note_python})
+
+def note_view(request):
+    python_list = []
+    django_list = []
+    java_list = []
+    mysql_list = []
+    machine_learning = []
+    front_end = []
+    javascript = []
+
+    note = notes.objects.order_by('tag')
+
+    for entry in note:
+        if entry.tag == 'PYTHON':
+            python_list.append(entry)
+        if entry.tag == 'DJANGO':
+            django_list.append(entry)
+        if entry.tag == 'JAVA':
+            java_list.append(entry)
+        if entry.tag == 'MYSQL':
+            mysql_list.append(entry)
+        if entry.tag == 'MACHINE_LEARNING':
+            machine_learning.append(entry)
+        if entry.tag == 'FRONT_END':
+            front_end.append(entry)
+        if entry.tag == 'JAVASCRIPT':
+            javascript.append(entry)
+
+    return render(request, 'notes/file_python.html',{'python_list':python_list,
+                                                     'django_list':django_list,
+                                                     'java_list':java_list,
+                                                     'mysql_list':mysql_list,
+                                                     'machine_learning':machine_learning,
+                                                     'front_end':front_end,
+                                                     'javascript':javascript})
 
 def register(request):
     registered = False

@@ -8,6 +8,6 @@ urlpatterns = [
     #path('user_login/',views.UserLoginView.as_view(),name='user_login'),
     path('user_logout/',views.LogoutView.as_view(),name='logout'),
     path('register/',views.register,name='register'),
-    path('notes/',views.file_python,name = 'file_python'),
+    path('notes/',views.note_view,name = 'note_view'),
 
 ]
