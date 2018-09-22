@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
+from .models import notes
 
 def index(request):
     return render(request, 'notes/index.html')
