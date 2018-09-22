@@ -14,4 +14,4 @@ class notes_form(forms.ModelForm):
 
     class Meta():
         model = notes
-        fields = ('tag','content','image')
+        fields = ('author','tag','title','content','published_date','image')

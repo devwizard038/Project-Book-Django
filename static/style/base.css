@@ -58,7 +58,10 @@ a:active{
 }
 
 .container-login{
-	position:relative;
+	font-size: 20px;
+	text-align: right;
+	margin-right: 30px;
+	position: relative;
 	padding-top: 100px;
 
 }
@@ -70,6 +73,8 @@ a:active{
   margin-bottom: 0;
   border-radius: 0;
 }
+
+
 
 .author-body{
   letter-spacing: 10px;
@@ -98,4 +103,37 @@ a:active{
 
 hr{
   border-color: 	#696969;
+}
+
+.row.content{
+	height:auto;
+}
+.sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+footer {
+	background: #555;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	margin: 0;
+}
+ @media screen and (max-width: 767px) {
+       .sidenav {
+         height: auto;
+         padding: 15px;
+       }
+       .row.content {height:auto;}
+     }
+.file_python{
+	overflow: inherit;
+	margin-top: 50px;
+	position: fixed;
+}
+.note{
+	z-index: 300;
 }
