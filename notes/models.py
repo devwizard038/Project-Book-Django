@@ -17,6 +17,7 @@ class notes(models.Model):
     MACHINE_LEARNING = 'MACHINE_LEARNING'
     JAVASCRIPT = 'JAVASCRIPT'
     FRONT_END = 'FRONT_END'
+    C = 'C/C++'
 
     NOTE_CHOICE = (
         (PYTHON,'PYTHON'),
@@ -26,6 +27,7 @@ class notes(models.Model):
         (MACHINE_LEARNING,'MACHINE_LEARNING'),
         (JAVASCRIPT,'JAVASCRIPT'),
         (FRONT_END,'FRONT_END'),
+        (C,'C/C++')
     )
 
     author = models.CharField(max_length=100)
