@@ -9,8 +9,29 @@ class UserProfileInfo(models.Model):
 
 #storing posts in the databse
 class notes(models.Model):
+
+    PYTHON = 'PYTHON'
+    DJANGO = 'DJANGO'
+    JAVA = 'JAVA'
+    MYSQL = 'MYSQL'
+    MACHINE_LEARNING = 'MACHINE_LEARNING'
+    JAVASCRIPT = 'JAVASCRIPT'
+    FRONT_END = 'FRONT_END'
+    C = 'C/C++'
+
+    NOTE_CHOICE = (
+        (PYTHON,'PYTHON'),
+        (DJANGO,'DJANGO'),
+        (JAVA,'JAVA'),
+        (MYSQL,'MYSQL'),
+        (MACHINE_LEARNING,'MACHINE_LEARNING'),
+        (JAVASCRIPT,'JAVASCRIPT'),
+        (FRONT_END,'FRONT_END'),
+        (C,'C/C++')
+    )
+
     author = models.CharField(max_length=100)
-    tag = models.CharField(blank = True,max_length=100)
+    tag = models.CharField(blank = True,choices = NOTE_CHOICE, max_length=100)
     title = models.CharField(max_length=200)
     content = models.TextField(max_length=10000)
     published_date = models.DateTimeField(blank=True, null=True)
