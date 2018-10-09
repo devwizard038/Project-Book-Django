@@ -10,6 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'style/base.css' %}">
+    {% block extrahead %}
+    {% endblock %}
     <script src="{% static 'style/base.js' %}"></script>
   </head>
 
@@ -51,6 +53,6 @@
     </nav>
     {% block body_block %}
     {% endblock %}
-    
+
   </body>
 </html>

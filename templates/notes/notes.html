@@ -1,5 +1,8 @@
 {% extends "notes/base.html" %}
 {% load static %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'style/index.css' %}">
+{% endblock %}
 {% block body_block %}
 <div container="file_python"><br><br><br>
   <div class="container-fluid text-center note_python">
@@ -22,9 +25,6 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
-      </div>
-
-      <div class="col-sm-8 text-left">
         {% for note in java_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -37,9 +37,6 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
-      </div>
-
-      <div class="col-sm-8 text-left">
         {% for note in javascript_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -52,9 +49,6 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
-      </div>
-
-      <div class="col-sm-8 text-left">
         {% for note in mysql_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -67,9 +61,6 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
-      </div>
-
-      <div class="col-sm-8 text-left">
         {% for note in machine_learning_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -82,9 +73,6 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
-      </div>
-
-      <div class="col-sm-8 text-left">
         {% for note in front_end_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -97,9 +85,6 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
-      </div>
-
-      <div class="col-sm-8 text-left">
         {% for note in django_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -112,9 +97,6 @@
           <p>{{ note.content|linebreaksbr }}</p><hr>
         </div>
         {% endfor %}
-      </div>
-
-      <div class="col-sm-8 text-left">
         {% for note in c_list %}
         <div class="note">
           <h1><a href="">{{ note.title }}</a>
@@ -129,17 +111,23 @@
         {% endfor %}
       </div>
 
-     <div class="col-sm-2 sidenav">
-       <div class="well">
-         <p>ADS</p>
-       </div>
-       <div class="well">
-         <p>ADS</p>
-       </div>
-     </div>
+      <div class="col-sm-2 sidenav">
+        <div class="well">
+          <p>ADS</p>
+        </div>
+        <div class="well">
+          <p>ADS</p>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>
+
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+
 
 {% endblock %}
